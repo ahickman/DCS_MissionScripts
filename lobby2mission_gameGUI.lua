@@ -12,12 +12,11 @@ _forceToSpectatorsSide 		= {}
 _forceToSpectatorsSlot 		= {}
 _forceToSpectatorsTime 		= {}
 
-
 -- UTILITY FUCTIONS
 function server.getFlagValue(_flag)
-    local _status,_error  = net.dostring_in('server', " return trigger.misc.getUserFlag(\"".._flag.."\"); ")
-    if not _status and _error then
-        net.log("error getting flag: ".._error)
+local _status,_error  = net.dostring_in('server', " return trigger.misc.getUserFlag(\"".._flag.."\"); ")
+	if not _status and _error then
+		net.log("error getting flag: ".._error)
         return 0
     else
         return tonumber(_status)
